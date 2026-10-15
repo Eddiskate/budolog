@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Kalkulator ocieplenia — {{ site_name }}{% endblock %}
+{% block meta_description %}Policz orientacyjny koszt styropianu lub wełny na ocieplenie ścian.{% endblock %}
+
+{% block body %}
+<h1 class="page-title">Kalkulator ocieplenia</h1>
+<p class="lede">Szacunek kosztu materiału (płyty). Robocizna i chemia ETICS — osobno u wykonawcy.</p>
+
+<form class="calc-form" id="calc-insulation" novalidate>
+    <div class="calc-grid">
+        <label>
+            <span>Powierzchnia ścian (m²)</span>
+            <input type="number" name="area" min="1" step="0.1" value="120" required>
+        </label>
+        <label>
+            <span>Grubość (cm)</span>
+            <input type="number" name="thickness" min="5" max="30" step="1" value="15" required>
+        </label>
+        <label>
+            <span>Materiał</span>
+            <select name="material">
+                <option value="eps">Styropian EPS (fasada)</option>
+                <option value="eps_graphite">Styropian grafitowy</option>
+                <option value="wool">Wełna mineralna</option>
+            </select>
+        </label>
+    </div>
+    <button type="submit" class="btn btn-primary">Policz</button>
+</form>
+
+<div class="calc-result" id="calc-insulation-result" hidden>
+    <h2>Wynik</h2>
+    <p class="calc-result-main" data-field="summary"></p>
+    <ul class="calc-result-list">
+        <li><strong>Objętość materiału:</strong> <span data-field="volume"></span></li>
+        <li><strong>Szacunek netto materiału:</strong> <span data-field="cost"></span></li>
+        <li><strong>Uwaga:</strong> <span data-field="note"></span></li>
+    </ul>
+</div>
+
+{% include '_affiliates.html.twig' %}
+{% endblock %}
+
+{% block scripts %}
+<script src="/js/calculators.js?v=1" defer></script>
+{% endblock %}

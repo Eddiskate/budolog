@@ -1,0 +1,50 @@
+# Podmień url na prawdziwe linki partnerskie po rejestracji w programach.
+affiliates:
+  - slug: styropian-eps
+    name: Styropian fasadowy EPS
+    tag: ocieplenie
+    blurb: Płyty EPS pod system ETICS — porównaj lambda i grubość, nie tylko cenę paczki.
+    url: https://example.com/affiliate/styropian
+    cta: Sprawdź oferty styropianu
+
+  - slug: welna-mineralna
+    name: Wełna mineralna
+    tag: ocieplenie
+    blurb: Gdy liczy się akustyka albo konstrukcja drewniana — wełna zamiast czystego EPS.
+    url: https://example.com/affiliate/welna
+    cta: Zobacz wełnę mineralną
+
+  - slug: klej-siatka-etics
+    name: Klej i siatka ETICS
+    tag: ocieplenie
+    blurb: System to nie same płyty — klej, kołki i siatka trzymają elewację latami.
+    url: https://example.com/affiliate/etics
+    cta: Dobierz chemię ETICS
+
+  - slug: beton-towarowy
+    name: Beton towarowy
+    tag: beton
+    blurb: Zamówienie z dozownią na m³ — mniej stresu niż mieszanie na placu przy większej wylewce.
+    url: https://example.com/affiliate/beton
+    cta: Zapytaj o beton
+
+  - slug: zageszczarka
+    name: Zagęszczarka / poziomnica laserowa
+    tag: narzedzia
+    blurb: Przy posadzkach i chodnikach narzędzie często decyduje o jakości bardziej niż sama mieszanka.
+    url: https://example.com/affiliate/narzedzia
+    cta: Sprawdź narzędzia
+
+  - slug: panele-pv
+    name: Panele fotowoltaiczne
+    tag: fotowoltaika
+    blurb: Porównaj moc i gwarancję — potem dobierz invertor i montaż pod swój dach.
+    url: https://example.com/affiliate/pv
+    cta: Porównaj panele PV
+
+  - slug: magazyn-energii
+    name: Magazyn energii
+    tag: energia
+    blurb: Ma sens przy wysokim autokonsumpcji — nie kupuj „bo sąsiad ma”.
+    url: https://example.com/affiliate/magazyn
+    cta: Zobacz magazyny energii

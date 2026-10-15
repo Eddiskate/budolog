@@ -1,0 +1,15 @@
+{% if affiliates is not empty %}
+<aside class="affiliate-block">
+    <h2>Powiązane oferty</h2>
+    <p class="section-lead">Linki partnerskie — po rejestracji w programach podmienisz URL w config/affiliates.yaml.</p>
+    <div class="card-grid">
+        {% for item in affiliates %}
+            <a class="info-card info-card-aff" href="{{ item.url }}" rel="sponsored noopener" target="_blank">
+                <h3>{{ item.name }}</h3>
+                <p>{{ item.blurb }}</p>
+                <span class="card-link">{{ item.cta }} →</span>
+            </a>
+        {% endfor %}
+    </div>
+</aside>
+{% endif %}

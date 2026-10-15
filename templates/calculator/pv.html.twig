@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Kalkulator fotowoltaiki — {{ site_name }}{% endblock %}
+{% block meta_description %}Oszacuj moc instalacji PV i orientacyjny koszt na podstawie zużycia prądu.{% endblock %}
+
+{% block body %}
+<h1 class="page-title">Kalkulator fotowoltaiki</h1>
+<p class="lede">Na podstawie rocznego zużycia w kWh — wynik to rząd wielkości, nie oferta handlowa.</p>
+
+<form class="calc-form" id="calc-pv" novalidate>
+    <div class="calc-grid">
+        <label>
+            <span>Roczne zużycie (kWh)</span>
+            <input type="number" name="kwh" min="500" step="100" value="4500" required>
+        </label>
+        <label>
+            <span>Pokrycie zużycia (%)</span>
+            <input type="number" name="coverage" min="40" max="120" step="5" value="90" required>
+        </label>
+        <label>
+            <span>Nasłonecznienie</span>
+            <select name="yield">
+                <option value="950">Słabsze (północ PL) ~950 kWh/kWp</option>
+                <option value="1050" selected>Typowe ~1050 kWh/kWp</option>
+                <option value="1150">Lepsze (południe) ~1150 kWh/kWp</option>
+            </select>
+        </label>
+    </div>
+    <button type="submit" class="btn btn-primary">Policz</button>
+</form>
+
+<div class="calc-result" id="calc-pv-result" hidden>
+    <h2>Wynik</h2>
+    <p class="calc-result-main" data-field="summary"></p>
+    <ul class="calc-result-list">
+        <li><strong>Szacowana moc:</strong> <span data-field="kwp"></span></li>
+        <li><strong>Roczna produkcja (orient.):</strong> <span data-field="production"></span></li>
+        <li><strong>Koszt instalacji (orient.):</strong> <span data-field="cost"></span></li>
+    </ul>
+</div>
+
+{% include '_affiliates.html.twig' %}
+{% endblock %}
+
+{% block scripts %}
+<script src="/js/calculators.js?v=1" defer></script>
+{% endblock %}

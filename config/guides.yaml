@@ -1,0 +1,76 @@
+guides:
+  - slug: ocieplenie-domu-od-czego-zaczac
+    title: Ocieplenie domu — od czego zacząć
+    category: ocieplenie
+    categoryLabel: Ocieplenie
+    summary: Grubość, materiał i kolejność prac — bez marketingowego szumu sprzedawców.
+    featured: true
+    publishedAt: "2026-10-01"
+    affiliateTags: [ocieplenie, styropian]
+    body: |
+      <p>Ocieplenie to jedna z tych inwestycji, które zwracają się latami — albo generują problemy, jeśli źle dobierzesz materiał i grubość.</p>
+      <h2>1. Policz powierzchnię i mostki cieplne</h2>
+      <p>Zacznij od metrażu ścian zewnętrznych (minus okna i drzwi). Do tego dolicz cokoły i miejsca wokół okien — tam najczęściej ucieka ciepło.</p>
+      <h2>2. Styropian czy wełna?</h2>
+      <p><strong>EPS (styropian)</strong> — tańszy, lżejszy, dobry na typowe ściany murowane. <strong>Wełna mineralna</strong> — lepsza akustycznie i przy drewnie / konstrukcjach szkieletowych, droższa w montażu.</p>
+      <h2>3. Grubość ma sens dopiero z lambdą</h2>
+      <p>Sam cm nic nie mówi. Liczy się opór cieplny R = grubość / lambda. Porównuj produkty po R, nie po cenie za paczkę.</p>
+      <h2>4. Nie oszczędzaj na kleju i siatce</h2>
+      <p>System ETICS to nie tylko płyty. Klej, kołki, siatka i tynk muszą grać razem — mieszanie „co akurat było w promocji” kończy się pęknięciami.</p>
+      <p>Użyj kalkulatora ocieplenia, żeby szybko zorientować się w koszcie materiału, zanim zadzwonisz po ekipę.</p>
+
+  - slug: ile-betonu-na-wylewke
+    title: Ile betonu na wylewkę — prosty rachunek
+    category: beton
+    categoryLabel: Beton
+    summary: Jak policzyć m³ betonu na posadzkę, żeby nie kupić za mało i nie wyrzucać resztek.
+    featured: true
+    publishedAt: "2026-10-05"
+    affiliateTags: [beton, narzedzia]
+    body: |
+      <p>Zamawiasz beton „na oko”? Albo zabraknie w środku wylewania, albo zostaje Ci pół betoniarki i stres.</p>
+      <h2>Wzór</h2>
+      <p>Objętość = długość × szerokość × grubość (wszystko w metrach). Przykład: 5 × 4 × 0,08 = <strong>1,6 m³</strong>.</p>
+      <h2>Zapas 5–10%</h2>
+      <p>Dodaj zapas na nierówności podłoża i straty przy układaniu. Przy 1,6 m³ warto zamówić ok. 1,7–1,8 m³.</p>
+      <h2>Jaką klasę betonu?</h2>
+      <p>Do typowych wylewek wewnętrznych często wystarczy C16/20 lub C20/25 — potwierdź z projektem lub kierownikiem robót.</p>
+      <p>Kalkulator betonu na Budologu zrobi to za Ciebie w 30 sekund.</p>
+
+  - slug: fotowoltaika-czy-sie-oplaca-2026
+    title: Fotowoltaika — czy się opłaca w 2026?
+    category: energia
+    categoryLabel: Energia
+    summary: Jak oszacować moc instalacji i kiedy PV ma sens przy Twoim rachunku za prąd.
+    featured: true
+    publishedAt: "2026-10-10"
+    affiliateTags: [fotowoltaika, energia]
+    body: |
+      <p>Opłacalność PV zależy od zużycia, kierunku dachu, zacienienia i taryfy. Nie od reklam na Facebooku.</p>
+      <h2>Zacznij od rachunku</h2>
+      <p>Weź roczne zużycie w kWh (z faktur). To baza do doboru mocy — nie „ile paneli zmieści się na dachu”.</p>
+      <h2>Orientacyjna moc</h2>
+      <p>Przy net-billingu zwykle celujesz w pokrycie większości zużycia, nie w maksymalną powierzchnię. 1 kWp w Polsce to z grubsza 900–1100 kWh/rok — zależnie od lokalizacji i nachylenia.</p>
+      <h2>Dach i zacienienie</h2>
+      <p>Południe / południowy-zachód, kąt 25–40°, brak kominów i drzew w cieniu. Wschód–zachód też działa, ale potrzebujesz więcej mocy.</p>
+      <p>Kalkulator fotowoltaiki pomoże oszacować moc i rząd wielkości kosztów — potem dopiero rozmawiaj z instalatorem.</p>
+
+  - slug: mostki-cieplne-gdzie-szukac
+    title: Mostki cieplne — gdzie ich szukać
+    category: ocieplenie
+    categoryLabel: Ocieplenie
+    summary: Balkony, wieńce, ościeża — miejsca, które zjadają efekt ocieplenia.
+    featured: false
+    publishedAt: "2026-10-12"
+    affiliateTags: [ocieplenie]
+    body: |
+      <p>Możesz położyć 20 cm styropianu i nadal mieć zimne narożniki, jeśli pominiesz mostki.</p>
+      <h2>Klasyczne miejsca</h2>
+      <ul>
+        <li>płyty balkonowe i loggie</li>
+        <li>wieńce i nadproża</li>
+        <li>ościeża okienne (za mały zakład ocieplenia)</li>
+        <li>łączenie ściany z fundamentem / cokołem</li>
+      </ul>
+      <h2>Co robić?</h2>
+      <p>Przy oknach: ocieplenie na ościeżach, ciepłe parapety, dobre uszczelnienie. Przy balkonach: izolacja ciągła albo specjalne łączniki termiczne — to decyzja na etapie projektu.</p>

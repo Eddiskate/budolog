@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Kalkulator betonu — {{ site_name }}{% endblock %}
+{% block meta_description %}Policz ile m³ betonu potrzebujesz na wylewkę, z zapasem.{% endblock %}
+
+{% block body %}
+<h1 class="page-title">Kalkulator betonu</h1>
+<p class="lede">Objętość wylewki + zapas 5–10%. Klasę betonu potwierdź z projektem.</p>
+
+<form class="calc-form" id="calc-concrete" novalidate>
+    <div class="calc-grid">
+        <label>
+            <span>Długość (m)</span>
+            <input type="number" name="length" min="0.1" step="0.01" value="5" required>
+        </label>
+        <label>
+            <span>Szerokość (m)</span>
+            <input type="number" name="width" min="0.1" step="0.01" value="4" required>
+        </label>
+        <label>
+            <span>Grubość (cm)</span>
+            <input type="number" name="thickness" min="3" max="40" step="0.5" value="8" required>
+        </label>
+        <label>
+            <span>Zapas (%)</span>
+            <input type="number" name="waste" min="0" max="20" step="1" value="8" required>
+        </label>
+    </div>
+    <button type="submit" class="btn btn-primary">Policz</button>
+</form>
+
+<div class="calc-result" id="calc-concrete-result" hidden>
+    <h2>Wynik</h2>
+    <p class="calc-result-main" data-field="summary"></p>
+    <ul class="calc-result-list">
+        <li><strong>Objętość netto:</strong> <span data-field="net"></span></li>
+        <li><strong>Z zapasem:</strong> <span data-field="gross"></span></li>
+        <li><strong>Szacunek kosztu betonu:</strong> <span data-field="cost"></span></li>
+    </ul>
+</div>
+
+{% include '_affiliates.html.twig' %}
+{% endblock %}
+
+{% block scripts %}
+<script src="/js/calculators.js?v=1" defer></script>
+{% endblock %}

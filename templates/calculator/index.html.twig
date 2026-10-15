@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Kalkulatory — {{ site_name }}{% endblock %}
+{% block meta_description %}Kalkulator ocieplenia, betonu i fotowoltaiki — szybki szacunek kosztów.{% endblock %}
+
+{% block body %}
+<h1 class="page-title">Kalkulatory</h1>
+<p class="lede">Orientacyjne wyniki do rozmowy z wykonawcą — nie zastępują wyceny firmowej.</p>
+
+<div class="card-grid">
+    <a class="info-card" href="{{ path('app_calc_insulation') }}">
+        <h3>Ocieplenie</h3>
+        <p>Metraż ścian, grubość i materiał → koszt płyt.</p>
+        <span class="card-link">Policz →</span>
+    </a>
+    <a class="info-card" href="{{ path('app_calc_concrete') }}">
+        <h3>Beton</h3>
+        <p>Wymiary wylewki → m³ z zapasem.</p>
+        <span class="card-link">Policz →</span>
+    </a>
+    <a class="info-card" href="{{ path('app_calc_pv') }}">
+        <h3>Fotowoltaika</h3>
+        <p>Roczne zużycie → moc kWp i koszt orientacyjny.</p>
+        <span class="card-link">Policz →</span>
+    </a>
+</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}O nas — {{ site_name }}{% endblock %}
+
+{% block body %}
+<div class="about-panel">
+    <h1 class="page-title">O Budologu</h1>
+    <div class="prose">
+        <p>Budolog to poradniki i kalkulatory dla osób, które remontują lub budują i chcą najpierw policzyć rząd wielkości — a dopiero potem rozmawiać z ekipą czy sprzedawcą.</p>
+        <p>Nie jesteśmy hurtownią ani firmą wykonawczą. Część linków to afiliacja: jeśli kupisz przez nie materiał lub usługę, możemy dostać prowizję.</p>
+        <p>Masz pomysł na kalkulator albo temat poradnika? Napisz: <a href="mailto:{{ contact_email }}">{{ contact_email }}</a>.</p>
+    </div>
+</div>
+{% endblock %}

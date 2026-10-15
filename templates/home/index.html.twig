@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ site_name }} — poradniki i kalkulatory budowlane{% endblock %}
+
+{% block body %}
+<section class="hero">
+    <div class="hero-copy">
+        <p class="eyebrow">Budowa i remont bez zgadywania</p>
+        <h1>Policz koszty, zanim weźmiesz ekipę</h1>
+        <p>Poradniki o ociepleniu, betonie i fotowoltaice oraz kalkulatory, które dają rząd wielkości — nie obietnice z ulotki.</p>
+        <div class="cta-row">
+            <a class="btn btn-primary" href="{{ path('app_calculators') }}">Otwórz kalkulatory</a>
+            <a class="btn btn-ghost" href="{{ path('app_guides') }}">Czytaj poradniki</a>
+        </div>
+    </div>
+    <aside class="hero-panel" aria-label="Kalkulatory">
+        <p class="hero-panel-label">Na skróty</p>
+        <ul class="hero-stack">
+            <li>
+                <a href="{{ path('app_calc_insulation') }}">
+                    <span class="hero-stack-name">Ocieplenie</span>
+                    <span class="hero-stack-tag">Kalkulator</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('app_calc_concrete') }}">
+                    <span class="hero-stack-name">Beton</span>
+                    <span class="hero-stack-tag">Kalkulator</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('app_calc_pv') }}">
+                    <span class="hero-stack-name">Fotowoltaika</span>
+                    <span class="hero-stack-tag">Kalkulator</span>
+                </a>
+            </li>
+        </ul>
+    </aside>
+</section>
+
+<section class="section">
+    <h2>Kalkulatory</h2>
+    <p class="section-lead">Trzy narzędzia na start — ocieplenie, beton i fotowoltaika.</p>
+    <div class="card-grid">
+        <a class="info-card" href="{{ path('app_calc_insulation') }}">
+            <h3>Kalkulator ocieplenia</h3>
+            <p>Metraż, grubość i materiał → szacunek kosztu płyt.</p>
+            <span class="card-link">Policz →</span>
+        </a>
+        <a class="info-card" href="{{ path('app_calc_concrete') }}">
+            <h3>Kalkulator betonu</h3>
+            <p>Długość × szerokość × grubość → m³ z zapasem.</p>
+            <span class="card-link">Policz →</span>
+        </a>
+        <a class="info-card" href="{{ path('app_calc_pv') }}">
+            <h3>Kalkulator fotowoltaiki</h3>
+            <p>Roczne zużycie → moc kWp i rząd wielkości kosztów.</p>
+            <span class="card-link">Policz →</span>
+        </a>
+    </div>
+</section>
+
+<section class="section">
+    <h2>Poradniki</h2>
+    <p class="section-lead">Krótko, konkretnie — żeby wiedzieć, o co pytać sprzedawcę i wykonawcę.</p>
+    <div class="product-list">
+        {% for guide in featured %}
+            <a class="product-row" href="{{ path('app_guide_show', {slug: guide.slug}) }}">
+                <div>
+                    <span class="badge">{{ guide.categoryLabel|default(guide.category) }}</span>
+                    <h3>{{ guide.title }}</h3>
+                    <p>{{ guide.summary }}</p>
+                </div>
+                <div class="meta-col">Czytaj →</div>
+            </a>
+        {% endfor %}
+    </div>
+    <p class="section-more"><a href="{{ path('app_guides') }}">Wszystkie poradniki →</a></p>
+</section>
+{% endblock %}

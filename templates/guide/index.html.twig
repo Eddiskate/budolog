@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Poradniki — {{ site_name }}{% endblock %}
+{% block meta_description %}Poradniki budowlane: ocieplenie, beton, fotowoltaika i mostki cieplne.{% endblock %}
+
+{% block body %}
+<h1 class="page-title">Poradniki</h1>
+<p class="lede">Praktyczne teksty pod remont i budowę — bez ściany z marketingu.</p>
+
+<div class="product-list">
+    {% for guide in guides %}
+        <a class="product-row" href="{{ path('app_guide_show', {slug: guide.slug}) }}">
+            <div>
+                <span class="badge">{{ guide.categoryLabel|default(guide.category) }}</span>
+                <h3>{{ guide.title }}</h3>
+                <p>{{ guide.summary }}</p>
+            </div>
+            <div class="meta-col">Czytaj →</div>
+        </a>
+    {% else %}
+        <p class="empty-note">Wkrótce pierwsze poradniki.</p>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+parameters:
+    app.contact_email_fallback: 'kontakt@budolog.pl'
+    app.contact_email: '%env(default:app.contact_email_fallback:CONTACT_EMAIL)%'
+    app.guides_file: '%kernel.project_dir%/config/guides.yaml'
+    app.affiliates_file: '%kernel.project_dir%/config/affiliates.yaml'
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    App\:
+        resource: '../src/'
+        exclude:
+            - '../src/DependencyInjection/'
+            - '../src/Entity/'
+            - '../src/Kernel.php'
+
+    App\Service\GuideRepository:
+        arguments:
+            $guidesFile: '%app.guides_file%'
+
+    App\Service\AffiliateRepository:
+        arguments:
+            $affiliatesFile: '%app.affiliates_file%'
+
+    App\Twig\AppExtension:
+        arguments:
+            $contactEmail: '%app.contact_email%'

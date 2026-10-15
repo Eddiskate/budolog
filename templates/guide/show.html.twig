@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ guide.title }} — {{ site_name }}{% endblock %}
+{% block meta_description %}{{ guide.summary }}{% endblock %}
+
+{% block body %}
+<article class="guide">
+    <span class="badge">{{ guide.categoryLabel|default(guide.category) }}</span>
+    <h1 class="page-title">{{ guide.title }}</h1>
+    <p class="lede">{{ guide.summary }}</p>
+    <div class="prose">
+        {{ guide.body|raw }}
+    </div>
+
+    {% if affiliates is not empty %}
+        <aside class="affiliate-block">
+            <h2>Warto sprawdzić</h2>
+            <p class="section-lead">Linki partnerskie — pomagają utrzymać Budologa.</p>
+            <div class="card-grid">
+                {% for item in affiliates %}
+                    <a class="info-card info-card-aff" href="{{ item.url }}" rel="sponsored noopener" target="_blank">
+                        <h3>{{ item.name }}</h3>
+                        <p>{{ item.blurb }}</p>
+                        <span class="card-link">{{ item.cta }} →</span>
+                    </a>
+                {% endfor %}
+            </div>
+        </aside>
+    {% endif %}
+
+    <p class="section-more"><a href="{{ path('app_guides') }}">← Wszystkie poradniki</a></p>
+</article>
+{% endblock %}
