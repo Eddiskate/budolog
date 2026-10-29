@@ -9,8 +9,18 @@ DirectoryIndex index.php
     RewriteCond %{HTTP:Authorization} .
     RewriteRule ^ - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
+    # Canonical host (www → apex) with explicit https Location
+    RewriteCond %{HTTP_HOST} ^www\.budolog\.pl$ [NC]
+    RewriteRule ^ https://budolog.pl%{REQUEST_URI} [R=301,L]
+
+    # Strip trailing slash before Symfony (avoid http:// Location behind TLS proxy)
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} ^(.+)/$
+    RewriteRule ^ https://budolog.pl%1 [R=301,L]
+
+    # Pretty URL for /index.php → /
     RewriteCond %{ENV:REDIRECT_STATUS} ^$
-    RewriteRule ^index\.php(?:/(.*)|$) %{ENV:BASE}/$1 [R=301,L]
+    RewriteRule ^index\.php(?:/(.*))?$ https://budolog.pl/$1 [R=301,L]
 
     RewriteCond %{REQUEST_FILENAME} -f
     RewriteRule ^ - [L]

@@ -74,3 +74,51 @@ guides:
       </ul>
       <h2>Co robić?</h2>
       <p>Przy oknach: ocieplenie na ościeżach, ciepłe parapety, dobre uszczelnienie. Przy balkonach: izolacja ciągła albo specjalne łączniki termiczne — to decyzja na etapie projektu.</p>
+
+  - slug: styropian-czy-welna-mineralna
+    title: Styropian czy wełna mineralna — co wybrać na ocieplenie
+    category: ocieplenie
+    categoryLabel: Ocieplenie
+    summary: Porównanie EPS i wełny pod kątem ceny, lambda, akustyki, ognia i montażu — bez reklamowych haseł.
+    featured: true
+    publishedAt: "2026-10-29"
+    affiliateTags: [ocieplenie, styropian]
+    body: |
+      <p>To jedno z najczęstszych pytań przed ociepleniem domu. Krótka odpowiedź: <strong>na typowe ściany murowane zwykle wygrywa styropian</strong>, a wełna ma sens tam, gdzie liczy się ogień, akustyka albo konstrukcja drewniana. Reszta to detale — i właśnie o nie chodzi.</p>
+
+      <h2>Szybkie porównanie</h2>
+      <ul>
+        <li><strong>Cena materiału</strong> — styropian zwykle tańszy o 20–40% przy podobnym R.</li>
+        <li><strong>Izolacyjność cieplna</strong> — obie technologie dają dobry wynik; porównuj lambdę i grubość, nie „cm z ulotki”.</li>
+        <li><strong>Akustyka</strong> — wełna mineralna wyraźnie lepsza przy hałasie z zewnątrz.</li>
+        <li><strong>Ogień</strong> — wełna jest niepalna; styropian wymaga poprawnego systemu ETICS i zabezpieczeń.</li>
+        <li><strong>Wilgoć / drewno</strong> — przy szkieletach i dachach skośnych częściej wybiera się wełnę.</li>
+        <li><strong>Montaż</strong> — EPS lżejszy i szybszy na fasadzie; wełna cięższa, wymaga precyzji.</li>
+      </ul>
+
+      <h2>Kiedy styropian (EPS / grafitowy)</h2>
+      <p>Jeśli masz dom murowany, standardowy ETICS i zależy Ci na rozsądnym budżecie — <strong>EPS to bezpieczny default</strong>. Grafitowy ma lepszą lambdę, więc przy tej samej grubości dostajesz wyższy opór cieplny (albo cieńszą warstwę przy tym samym R).</p>
+      <p>Pilnuj systemu: klej, kołki, siatka i tynk z jednej linii. Mieszanie „co było w promocji” kończy się pęknięciami i reklamacjami.</p>
+
+      <h2>Kiedy wełna mineralna</h2>
+      <p>Wybierz wełnę, gdy:</p>
+      <ul>
+        <li>dom stoi przy ruchliwej drodze i chcesz wyciszyć fasadę,</li>
+        <li>masz konstrukcję drewnianą / szkieletową,</li>
+        <li>w projekcie lub przepisach lokalnych liczy się klasa reakcji na ogień,</li>
+        <li>ocieplasz poddasze albo ściany działowe od strony hałasu.</li>
+      </ul>
+      <p>Wełna kosztuje więcej i jest mniej wyrozumiała dla byle jakiego montażu — ale w tych zastosowaniach zwykle nie ma sensownej alternatywy.</p>
+
+      <h2>Na co patrzeć w ofercie, nie tylko na cenę</h2>
+      <ol>
+        <li><strong>Lambda (λ)</strong> — im niższa, tym lepiej izoluje.</li>
+        <li><strong>Opór R</strong> — R = grubość / λ; to prawdziwa miara, nie „15 cm”.</li>
+        <li><strong>Gęstość / typ płyty</strong> — fasada vs dach vs podłoga to różne produkty.</li>
+        <li><strong>Komplet systemu</strong> — zwłaszcza przy ETICS.</li>
+      </ol>
+
+      <h2>Praktyczna decyzja w 1 minutę</h2>
+      <p><strong>Murowany dom, budżet, standardowa elewacja</strong> → styropian (najczęściej grafitowy).</p>
+      <p><strong>Hałas, drewno, wyższe wymagania ogniowe</strong> → wełna mineralna.</p>
+      <p>Zanim zamówisz 200 m² „bo sąsiad tak zrobił”, policz powierzchnię i rząd wielkości kosztów w kalkulatorze ocieplenia — potem dopiero rozmawiaj z ekipą.</p>

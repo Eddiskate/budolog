@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ post.title }} — {{ site_name }}{% endblock %}
+{% block meta_description %}{{ post.header|default(post.title) }}{% endblock %}
+
+{% block body %}
+<article class="guide">
+    {% if post.catalog.name is defined and post.catalog.name %}
+        <span class="badge">{{ post.catalog.name }}</span>
+    {% else %}
+        <span class="badge">Artykuł</span>
+    {% endif %}
+    <h1 class="page-title">{{ post.title }}</h1>
+    {% if post.header is defined and post.header %}
+        <p class="lede">{{ post.header }}</p>
+    {% endif %}
+    {% if post.createdAt is defined and post.createdAt %}
+        <p class="article-date">{{ post.createdAt|date('d.m.Y') }}</p>
+    {% endif %}
+
+    {% if post.imageUrl is defined and post.imageUrl %}
+        <figure class="article-cover">
+            <img src="{{ post.imageUrl }}" alt="" loading="lazy" style="object-fit: {{ post.imagePosition|default('cover') }};">
+            {% if post.imageSource is defined and post.imageSource %}
+                <figcaption>Źródło: {{ post.imageSource }}</figcaption>
+            {% endif %}
+        </figure>
+    {% endif %}
+
+    <div class="prose">
+        {{ body_html|raw }}
+    </div>
+
+    <p class="section-more"><a href="{{ path('app_articles') }}">← Wszystkie artykuły</a></p>
+</article>
+{% endblock %}

@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Service\BlogApiClient;
 use App\Service\GuideRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -24,20 +25,42 @@ class PageController extends AbstractController
     }
 
     #[Route('/sitemap.xml', name: 'app_sitemap', priority: 10)]
-    public function sitemap(GuideRepository $guides): Response
+    public function sitemap(GuideRepository $guides, BlogApiClient $blogApi): Response
     {
-        $paths = ['/', '/poradniki', '/kalkulatory', '/kalkulatory/ocieplenie', '/kalkulatory/beton', '/kalkulatory/fotowoltaika', '/o-nas'];
+        $today = (new \DateTimeImmutable('today'))->format('Y-m-d');
+        $entries = [
+            ['/', '1.0', 'weekly'],
+            ['/poradniki', '0.9', 'weekly'],
+            ['/artykuly', '0.9', 'weekly'],
+            ['/kalkulatory', '0.9', 'weekly'],
+            ['/kalkulatory/ocieplenie', '0.8', 'monthly'],
+            ['/kalkulatory/beton', '0.8', 'monthly'],
+            ['/kalkulatory/fotowoltaika', '0.8', 'monthly'],
+            ['/o-nas', '0.5', 'monthly'],
+        ];
         foreach ($guides->all() as $guide) {
             $slug = $guide['slug'] ?? null;
             if (is_string($slug) && $slug !== '') {
-                $paths[] = '/poradniki/' . $slug;
+                $entries[] = ['/poradniki/' . $slug, '0.8', 'monthly'];
+            }
+        }
+        foreach ($blogApi->listPosts(100) as $post) {
+            $slug = $post['slug'] ?? null;
+            if (is_string($slug) && $slug !== '') {
+                $entries[] = ['/artykuly/' . $slug, '0.7', 'weekly'];
             }
         }
 
         $xml = '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
         $xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
-        foreach ($paths as $path) {
-            $xml .= '  <url><loc>https://budolog.pl' . htmlspecialchars($path, ENT_XML1) . '</loc></url>' . "\n";
+        foreach ($entries as [$path, $priority, $changefreq]) {
+            $loc = htmlspecialchars('https://budolog.pl' . $path, ENT_XML1);
+            $xml .= "  <url>\n";
+            $xml .= "    <loc>{$loc}</loc>\n";
+            $xml .= "    <lastmod>{$today}</lastmod>\n";
+            $xml .= "    <changefreq>{$changefreq}</changefreq>\n";
+            $xml .= "    <priority>{$priority}</priority>\n";
+            $xml .= "  </url>\n";
         }
         $xml .= '</urlset>';
 

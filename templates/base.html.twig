@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}{{ site_name }}{% endblock %}</title>
     <meta name="description" content="{% block meta_description %}Poradniki budowlane i kalkulatory — ocieplenie, beton, fotowoltaika. Licz koszty zanim zadzwonisz po ekipę.{% endblock %}">
+    <meta name="robots" content="{% block robots %}index, follow{% endblock %}">
     <link rel="canonical" href="{% block canonical %}{{ site_url }}{{ app.request.pathInfo }}{% endblock %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/site.css?v=1">
+    <link rel="stylesheet" href="/css/site.css?v=2">
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230F172A'/%3E%3Cpath d='M8 22V10h4l4 8 4-8h4v12h-3.2v-7.2L17.5 22h-3L11.2 14.8V22H8z' fill='%23EA580C'/%3E%3C/svg%3E">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0LL1M914Q7"></script>
@@ -27,6 +28,7 @@
         <a class="brand" href="{{ path('app_home') }}">{{ site_name }}</a>
         <nav class="nav" aria-label="Główne">
             <a href="{{ path('app_guides') }}">Poradniki</a>
+            <a href="{{ path('app_articles') }}">Artykuły</a>
             <a href="{{ path('app_calculators') }}">Kalkulatory</a>
             <a href="{{ path('app_about') }}">O nas</a>
             <a class="nav-cta" href="{{ path('app_calc_insulation') }}">Policz ocieplenie</a>

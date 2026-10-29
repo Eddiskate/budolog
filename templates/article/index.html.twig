@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Artykuły — {{ site_name }}{% endblock %}
+{% block meta_description %}Artykuły budowlane z Budologa — porównania materiałów, koszty i praktyczne wskazówki.{% endblock %}
+
+{% block body %}
+<h1 class="page-title">Artykuły</h1>
+<p class="lede">Porównania i teksty z panelu treści — uzupełnienie poradników i kalkulatorów.</p>
+
+{% if posts is empty %}
+    <p class="empty-note">
+        {% if not apiConfigured %}
+            Brak konfiguracji API bloga. Ustaw <code>BLOG_API_URL</code> i <code>BLOG_API_KEY</code>.
+        {% else %}
+            Na razie brak artykułów. Sprawdź, czy domena budolog.pl ma przypisane posty w web-portal.
+        {% endif %}
+        Tymczasem zajrzyj do <a href="{{ path('app_guides') }}">poradników</a>.
+    </p>
+{% else %}
+    <div class="product-list">
+        {% for post in posts %}
+            <a class="product-row product-row-article" href="{{ path('app_article_show', {slug: post.slug}) }}">
+                {% if post.imageUrl is defined and post.imageUrl %}
+                    <img class="article-thumb" src="{{ post.imageUrl }}" alt="" loading="lazy" width="120" height="80">
+                {% endif %}
+                <div>
+                    {% if post.catalog.name is defined and post.catalog.name %}
+                        <span class="badge">{{ post.catalog.name }}</span>
+                    {% else %}
+                        <span class="badge">Artykuł</span>
+                    {% endif %}
+                    <h3>{{ post.title }}</h3>
+                    {% if post.header is defined and post.header %}
+                        <p>{{ post.header }}</p>
+                    {% endif %}
+                </div>
+                <div class="meta-col">Czytaj →</div>
+            </a>
+        {% endfor %}
+    </div>
+{% endif %}
+{% endblock %}

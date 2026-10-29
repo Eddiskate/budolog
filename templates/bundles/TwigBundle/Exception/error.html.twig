@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Błąd — {{ site_name|default('Budolog') }}</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="/css/site.css?v=1">
+</head>
+<body>
+    <div class="page-bg" aria-hidden="true"></div>
+    <header class="site-header">
+        <a class="brand" href="/">{{ site_name|default('Budolog') }}</a>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-copy">
+                <p class="eyebrow">Błąd</p>
+                <h1>Coś poszło nie tak</h1>
+                <p>Spróbuj ponownie za chwilę albo wróć na stronę główną.</p>
+                <div class="cta-row">
+                    <a class="btn btn-primary" href="/">Strona główna</a>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
